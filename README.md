@@ -1,151 +1,194 @@
 # 📊 Employee Attendance Management System
 
-This is a full-stack web application designed for robust, role-based attendance tracking, management, and reporting, built using the MERN stack (MongoDB, Express, React, Node.js).
+A full-stack MERN application for secure, role-based employee attendance tracking, analytics, and reporting.[1]
 
-## 🌟 Key Features
+## ⭐ Features
 
-### Employee Dashboard
-* **Quick Actions:** Check-in and Check-out functionality.
-* **Monthly Summary:** Shows days Present, Late, Absent, and Total Hours worked for the current month.
-* **Attendance History:** Dedicated page with Calendar and List views of past attendance.
-* **Color-Coded Statuses:** Calendar tiles show color coding for Present (Green), Absent (Red), Late (Yellow), and Half-Day (Orange).
-* **Profile View:** Dedicated page to view user details (Employee ID, Department).
+### 👨‍💼 Employee Features
 
-### Manager Dashboard
-* **Overview:** Real-time stats on Total Employees, Present Today, Late Today, and Absent Today.
-* **Analytics Charts:** Includes Weekly Attendance Trends (Bar Chart) and Department Distribution (Pie Chart).
-* **Team Calendar:** Tab to view team attendance visually by selecting a date.
-* **Absentee List:** Explicitly lists employees who have not checked in today.
-* **Reports:** Dedicated tab to filter attendance records by date range and employee name, with **CSV Export** functionality.
+- Check-In / Check-Out actions  
+- Monthly summary dashboard: Present, Late, Absent, Total Hours  
+- Attendance history with calendar and list views  
+- Color-coded statuses:  
+  - 🟩 Present  
+  - 🟥 Absent  
+  - 🟨 Late  
+  - 🟧 Half-Day  
+- Profile page with Employee ID and Department  
 
-## 🛠️ Tech Stack & Requirements
+### 👩‍💼 Manager Features
 
-| Layer | Technology | Status |
-| :--- | :--- | :--- |
-| **Frontend** | React, Vite, Zustand | Complete |
-| **Styling** | Custom Inline Styles (Aesthetic UI/UX) | Complete |
-| **Charts** | Recharts, React-Calendar | Complete |
-| **Backend** | Node.js, Express.js | Complete |
-| **Database** | MongoDB (Mongoose) | Complete |
-| **Authentication** | JWT (JSON Web Tokens) | Complete |
+- Real-time overview: Total Employees, Present Today, Late Today, Absent Today  
+- Analytics:  
+  - Weekly attendance trends (Bar Chart)  
+  - Department distribution (Pie Chart)  
+  - Team calendar view  
+- Absentee list (employees who did not check in)  
+- Reports tab:  
+  - Filter by date range or employee  
+  - Export to CSV  
 
-## 🚀 Setup & Installation
+## 🛠️ Tech Stack
+
+| Layer     | Technology                          |
+|----------|--------------------------------------|
+| Frontend | React, Vite, Zustand                 |
+| Styling  | Custom Inline Styles                 |
+| Charts   | Recharts, React-Calendar             |
+| Backend  | Node.js, Express.js                  |
+| Database | MongoDB, Mongoose                    |
+| Auth     | JWT                                  |[2]
+
+## 🚀 Installation & Setup
 
 ### Prerequisites
-* Node.js (LTS Version)
-* MongoDB Instance (Local or Atlas)
-* Git (for cloning and pushing)
 
-### 1. Install Dependencies
-Run these commands in the terminal from the project root:
+- Node.js (LTS)  
+- MongoDB (Local / Atlas)  
+- Git  
+
+### 1. Clone the Repository
 
 ```bash
-# Install Server Dependencies (Express, Mongoose, etc.)
+git clone <your-repo-url>
+cd attendance-system
+```
+
+### 2. Install Dependencies
+
+```bash
+# Server (Backend)
 cd server
 npm install
 
-# Install Client Dependencies (React, Zustand, Recharts, etc.)
+# Client (Frontend)
 cd ../client
 npm install
+```
 
+### 3. Configure Environment Variables
 
-2. Configure Environment Variables
-Create a file named .env inside the server directory:
+Create a `.env` file inside `server`:
 
-Code snippet
-
+```env
 PORT=5000
-MONGO_URI=mongodb://localhost:27017/attendance_db_project  # <-- Update with your MongoDB URI
-JWT_SECRET=supersecretkey123  # <-- Use a strong, complex secret key
-▶️ Running the Application
-1. Seed the Database (Required for First Run)
-The seed script creates the initial Manager and Employee accounts and generates 30 days of sample attendance data.
+MONGO_URI=mongodb://localhost:27017/attendance_db_project #yours
+JWT_SECRET=supersecretkey123
+```
 
-Bash
+## ▶️ Running the Application
 
+### 1. Seed the Database (First Time Only)
+
+```bash
 cd server
 node seed.js
-(Wait for confirmation logs: "Users Created..." and "Attendance Records Created...")
+```
 
-2. Start Backend API
-In your first terminal tab, start the server with nodemon for automatic restarts during development:
+Expected logs:
 
-Bash
+- "Users Created..."  
+- "Attendance Records Created..."  
 
+### 2. Start Backend API
+
+```bash
 npm run dev
-(Server should confirm "MongoDB Connected" and "Server running on port 5000". This process must remain running.)
+```
 
-3. Start Frontend Client
-In your second terminal tab, start the React client:
+### 3. Start Frontend
 
-Bash
-
+```bash
 cd ../client
 npm run dev
-(The client will open in your browser at http://localhost:5173.)
+```
 
-🔑 Default Login Credentials
-Use these credentials to test role-based access immediately after seeding the database:
+Application URL:  
+👉 http://localhost:5173/
 
-Role	Email	Password
-Manager	admin@test.com	123
-Employee	bob@test.com	123
+## 🔑 Default Login Credentials
 
-Export to Sheets
+| Role     | Email           | Password |
+|----------|-----------------|----------|
+| Manager  | admin@test.com  | 123      |
+| Employee | bob@test.com    | 123      |[3]
 
-📐 Database Schema
-The system uses two primary collections linked by userId.
+## 🗄️ Database Schema
 
-Shutterstock
-Explore
+### 📁 `users` Collection
 
-users Collection
-Field	Type	Description
-_id	ObjectId	MongoDB unique identifier.
-name	String	User's full name.
-email	String	Unique login identifier.
-password	String	Hashed using bcrypt.
-role	String	('employee' / 'manager').
-employeeId	String	Unique company ID (e.g., EMP001).
-department	String	User's department.
+| Field       | Type     | Description          |
+|------------|----------|----------------------|
+| _id        | ObjectId | Unique ID            |
+| name       | String   | Full name            |
+| email      | String   | Unique login email   |
+| password   | String   | Hashed password      |
+| role       | String   | employee / manager   |
+| employeeId | String   | e.g., EMP001         |
+| department | String   | Department name      |[4]
 
-Export to Sheets
+### 📁 `attendances` Collection
 
-attendances Collection
-Field	Type	Description
-_id	ObjectId	MongoDB unique identifier.
-userId	ObjectId	Reference to the users collection.
-date	String	Attendance date (YYYY-MM-DD format).
-checkInTime	Date	Timestamp of check-in.
-checkOutTime	Date	Timestamp of check-out.
-status	String	('present' / 'absent' / 'late' / 'half-day').
-totalHours	Number	Calculated hours worked between check-in and check-out.
+| Field        | Type     | Description                      |
+|-------------|----------|----------------------------------|
+| _id         | ObjectId | Unique ID                        |
+| userId      | ObjectId | Reference to `users` collection  |
+| date        | String   | YYYY-MM-DD                       |
+| checkInTime | Date     | Check-in timestamp               |
+| checkOutTime| Date     | Check-out timestamp              |
+| status      | String   | present / absent / late / half-day |
+| totalHours  | Number   | Working hours                    |[4]
 
-Export to Sheets
+## 🌐 API Endpoints
 
-🌐 API Endpoints
-All endpoints are protected by JWT authentication middleware (/api/*), requiring a valid token in the Authorization: Bearer <token> header, unless otherwise noted.
+All protected endpoints require:  
+`Authorization: Bearer <token>`[2]
 
-Authentication (Public & Protected)
-Method	Endpoint	Description
-POST	/api/auth/register	Creates a new employee account.
-POST	/api/auth/login	Authenticates user and returns JWT.
-GET	/api/auth/me	Fetches details of the currently authenticated user.
+### 🔐 Authentication
 
-Export to Sheets
+| Method | Endpoint          | Description           |
+|--------|-------------------|-----------------------|
+| POST   | /api/auth/register| Register new employee |
+| POST   | /api/auth/login   | Login and receive JWT |
+| GET    | /api/auth/me      | Fetch current user    |
 
-Attendance (Employee Role)
-Method	Endpoint	Description
-POST	/api/attendance/checkin	Records today's check-in time and initial status.
-POST	/api/attendance/checkout	Records check-out time and calculates final status/hours.
-GET	/api/attendance/today	Retrieves today's attendance record (for dashboard quick stats).
-GET	/api/attendance/my-history	Retrieves all attendance records for the current user.
+### 👨‍💼 Employee Attendance APIs
 
-Export to Sheets
+| Method | Endpoint                    | Description        |
+|--------|-----------------------------|--------------------|
+| POST   | /api/attendance/checkin     | Record check-in    |
+| POST   | /api/attendance/checkout    | Record check-out   |
+| GET    | /api/attendance/today       | Today’s attendance |
+| GET    | /api/attendance/my-history  | Attendance history |
 
-Reporting & Management (Manager Role)
-Method	Endpoint	Description
-GET	/api/attendance/all	Retrieves all attendance records for all employees.
-GET	/api/dashboard/stats	Retrieves aggregated data for charts (weekly trends, daily attendance summary).
-GET	/api/attendance/export	Generates and streams CSV file containing all attendance data.
-DELETE	/api/attendance/:id	Deletes a specific attendance record (for corrections).
+### 🧑‍💼 Manager Reporting APIs
+
+| Method | Endpoint                   | Description              |
+|--------|----------------------------|--------------------------|
+| GET    | /api/attendance/all        | All attendance records   |
+| GET    | /api/dashboard/stats       | Graph and analytics data |
+| GET    | /api/attendance/export     | Export CSV               |
+| DELETE | /api/attendance/:id        | Delete attendance entry  |
+
+## 📷 Screenshots
+<img width="927" height="796" alt="image" src="https://github.com/user-attachments/assets/319f9824-654a-4e96-acc3-e0c9d8e0a856" />
+
+<img width="1329" height="752" alt="image" src="https://github.com/user-attachments/assets/ac9b6b46-b883-41fd-a2d5-b2a932d3556e" />
+
+<img width="1843" height="808" alt="image" src="https://github.com/user-attachments/assets/da29b943-407b-47e2-bc14-fe9f2fddefbb" />
+
+<img width="1566" height="834" alt="image" src="https://github.com/user-attachments/assets/5a0c3593-b181-4519-ad70-684197f828f8" />
+
+<img width="1171" height="825" alt="image" src="https://github.com/user-attachments/assets/2b3fd8d7-707d-4b44-99f6-845573227957" />
+
+<img width="1897" height="838" alt="image" src="https://github.com/user-attachments/assets/79cddcb2-1fb9-4d00-a0d5-1e50485bc8ea" />
+
+<img width="1870" height="567" alt="image" src="https://github.com/user-attachments/assets/60cfa5a4-e1a9-4632-94ec-d4c4da07cb9c" />
+
+<img width="1332" height="674" alt="image" src="https://github.com/user-attachments/assets/61b5054a-82e5-411f-88af-26a41742b7ac" />
+
+<img width="1490" height="808" alt="image" src="https://github.com/user-attachments/assets/3c7c96e4-4fcf-4d7b-8d39-077b06dd6088" />
+
+<img width="1332" height="674" alt="image" src="https://github.com/user-attachments/assets/71454120-8847-4638-8a1b-6b61fe8d343c" />
+
+<img width="1171" height="825" alt="image" src="https://github.com/user-attachments/assets/1a70f768-37b9-4b82-8b1e-e08796b26244" />
