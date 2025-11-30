@@ -171,24 +171,16 @@ All protected endpoints require:
 | DELETE | /api/attendance/:id        | Delete attendance entry  |
 
 ## 📷 Screenshots
-<img width="927" height="796" alt="image" src="https://github.com/user-attachments/assets/319f9824-654a-4e96-acc3-e0c9d8e0a856" />
+  <img width="1329" height="752" alt="Screenshot 2025-11-30 181804" src="https://github.com/user-attachments/assets/70022d9d-f14f-475e-aeb4-61524524615e" />
+  <img width="927" height="796" alt="Screenshot 2025-11-30 182159" src="https://github.com/user-attachments/assets/678c49ea-f59c-4633-a9ec-81661d3b285f" />
+<img width="1843" height="808" alt="Screenshot 2025-11-30 181925" src="https://github.com/user-attachments/assets/8db05333-385f-43fd-904b-b13459bd4f65" />
+<img width="1566" height="834" alt="Screenshot 2025-11-30 181943" src="https://github.com/user-attachments/assets/70954643-0526-4407-aea0-ee8ab03a8ebf" />
+<img width="1171" height="825" alt="Screenshot 2025-11-30 181955" src="https://github.com/user-attachments/assets/b2c87f08-8b68-4d27-b4e5-5628db3c7328" />
+<img width="1897" height="838" alt="Screenshot 2025-11-30 182016" src="https://github.com/user-attachments/assets/67c49d6b-b222-4bfc-9567-f0ce42c871f2" />
+<img width="1907" height="689" alt="Screenshot 2025-11-30 182031" src="https://github.com/user-attachments/assets/ae37671c-0002-4129-a4f7-ca4ef66a9420" />
+<img width="1870" height="567" alt="Screenshot 2025-11-30 182042" src="https://github.com/user-attachments/assets/9cb96d87-c509-4a39-81cd-ab89199d837f" />
+<img width="1789" height="857" alt="Screenshot 2025-11-30 182107" src="https://github.com/user-attachments/assets/377e5abf-ecf1-4c85-8491-da8bb9df591b" />
+<img width="1332" height="674" alt="Screenshot 2025-11-30 182121" src="https://github.com/user-attachments/assets/066fad14-20b9-40bd-9768-9fb473db7550" />
+<img width="1490" height="808" alt="Screenshot 2025-11-30 182137" src="https://github.com/user-attachments/assets/9792a8f1-dde5-4404-9310-65e43cf44c1f" />
 
-<img width="1329" height="752" alt="image" src="https://github.com/user-attachments/assets/ac9b6b46-b883-41fd-a2d5-b2a932d3556e" />
 
-<img width="1843" height="808" alt="image" src="https://github.com/user-attachments/assets/da29b943-407b-47e2-bc14-fe9f2fddefbb" />
-
-<img width="1566" height="834" alt="image" src="https://github.com/user-attachments/assets/5a0c3593-b181-4519-ad70-684197f828f8" />
-
-<img width="1171" height="825" alt="image" src="https://github.com/user-attachments/assets/2b3fd8d7-707d-4b44-99f6-845573227957" />
-
-<img width="1897" height="838" alt="image" src="https://github.com/user-attachments/assets/79cddcb2-1fb9-4d00-a0d5-1e50485bc8ea" />
-
-<img width="1870" height="567" alt="image" src="https://github.com/user-attachments/assets/60cfa5a4-e1a9-4632-94ec-d4c4da07cb9c" />
-
-<img width="1332" height="674" alt="image" src="https://github.com/user-attachments/assets/61b5054a-82e5-411f-88af-26a41742b7ac" />
-
-<img width="1490" height="808" alt="image" src="https://github.com/user-attachments/assets/3c7c96e4-4fcf-4d7b-8d39-077b06dd6088" />
-
-<img width="1332" height="674" alt="image" src="https://github.com/user-attachments/assets/71454120-8847-4638-8a1b-6b61fe8d343c" />
-
-<img width="1171" height="825" alt="image" src="https://github.com/user-attachments/assets/1a70f768-37b9-4b82-8b1e-e08796b26244" />
